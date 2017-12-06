@@ -12,3 +12,6 @@ class Genre(MPTTModel):
 
     def __str__(self):
         return f'{self.name}'
+
+    def is_second_node(self):
+        return True if (self.get_ancestors().count() == 1) else False
