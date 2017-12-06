@@ -5,6 +5,23 @@
 #    pip-compile --output-file requirements.txt requirements.in
 #
 -e git+git@github.com:django-mptt/django-mptt.git@origin/master#egg=django-mptt
+appnope==0.1.0            # via ipython
+decorator==4.1.2          # via ipython, traitlets
+django-extensions==1.9.8
 django-js-asset==0.1.1
 django==2.0
+ipython-genutils==0.2.0   # via traitlets
+ipython==6.2.1
+jedi==0.11.0              # via ipython
+parso==0.1.0              # via jedi
+pexpect==4.3.0            # via ipython
+pickleshare==0.7.4        # via ipython
+prompt-toolkit==1.0.15    # via ipython
+ptyprocess==0.5.2         # via pexpect
+pygments==2.2.0           # via ipython
 pytz==2017.3              # via django
+simplegeneric==0.8.1      # via ipython
+six==1.11.0               # via django-extensions, prompt-toolkit, traitlets
+traitlets==4.3.2          # via ipython
+typing==3.6.2             # via django-extensions
+wcwidth==0.1.7            # via prompt-toolkit
