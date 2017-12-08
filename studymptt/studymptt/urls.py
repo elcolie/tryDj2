@@ -17,8 +17,10 @@ from django.contrib import admin
 from django.urls import path
 
 from genres.views import GenreListView
+from openingstocks.views import OpeningStockCreateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', GenreListView.as_view()),
+    path('openingstocks', OpeningStockCreateView.as_view()),
 ]
