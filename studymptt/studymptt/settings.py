@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'mptt',
     'genres',
     'openingstocks',
+    'geoposition',
+    'pois',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +125,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR + '/static_files'
+
+GEOPOSITION_GOOGLE_MAPS_API_KEY = 'AIzaSyCUklnu7KC1gC0NfMIixe5BzDNMh8qot68'
+GEOPOSITION_MAP_OPTIONS = {
+    'minZoom': 3,
+    'maxZoom': 15,
+}
+
+GEOPOSITION_MARKER_OPTIONS = {
+    'cursor': 'move'
+}
