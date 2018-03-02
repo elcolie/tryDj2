@@ -1,5 +1,7 @@
-from django.views.generic import ListView
+from django.urls import reverse_lazy
+from django.views.generic import ListView, CreateView, DeleteView, DetailView
 
+from genres.forms import GenreCreateForm
 from genres.models import Genre
 
 
@@ -32,3 +34,30 @@ class GenreListView(ListView):
         context.update(kwargs)
         context['nodes'] = context.get('object_list')
         return super().get_context_data(**context)
+
+
+class GenreCreateView(CreateView):
+    model = Genre
+    template_name = 'genre_create.html'
+    form_class = GenreCreateForm
+    success_url = reverse_lazy('genre:list')
+
+
+class GenreDetailView(DetailView):
+    model = Genre
+    template_name = 'genre_detail.html'
+
+    def get_context_data(self, **kwargs):
+        """
+        Follow the example https://docs.djangoproject.com/en/2.0/ref/class-based-views/generic-display/#detailview
+        :param kwargs:
+        :return:
+        """
+        context = super().get_context_data(**kwargs)
+        return context
+
+
+class GenreDeleteView(DeleteView):
+    model = Genre
+    template_name = 'genre_confirm_delete.html'
+    success_url = reverse_lazy('genre:list')
