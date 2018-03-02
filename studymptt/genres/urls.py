@@ -1,6 +1,6 @@
 from django.urls import path
 
-from genres.views import GenreListView, GenreCreateView, GenreDeleteView, GenreDetailView
+from genres.views import GenreListView, GenreCreateView, GenreDeleteView, GenreDetailView, GenreMoveView, move_category
 
 app_name = 'genres'
 urlpatterns = [
@@ -8,4 +8,5 @@ urlpatterns = [
     path('create/', GenreCreateView.as_view(), name='create'),
     path('<int:pk>/', GenreDetailView.as_view(), name='detail'),
     path('<int:pk>/delete/', GenreDeleteView.as_view(), name='delete'),
+    path('<int:pk>/move/', move_category, name='move'),
 ]

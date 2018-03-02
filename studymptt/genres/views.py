@@ -1,8 +1,39 @@
+from django.http import HttpResponseRedirect
+from django.shortcuts import get_object_or_404, render
 from django.urls import reverse_lazy
-from django.views.generic import ListView, CreateView, DeleteView, DetailView
+from django.views.generic import ListView, CreateView, DeleteView, DetailView, UpdateView
+from mptt.exceptions import InvalidMove
+from mptt.forms import MoveNodeForm
 
-from genres.forms import GenreCreateForm
+from genres.forms import GenreCreateForm, GenreMoveNodeForm
 from genres.models import Genre
+
+
+def move_category(request, pk=None):
+    category = get_object_or_404(Genre, pk=pk)
+    if request.method == 'POST':
+        form = MoveNodeForm(category, request.POST)
+        if form.is_valid():
+            try:
+                category = form.save()
+                return HttpResponseRedirect(reverse_lazy('genre:list'))
+            except InvalidMove:
+                pass
+    else:
+        form = MoveNodeForm(category)
+    '''
+    Be caution on the render. The given example from http://django-mptt.readthedocs.io/en/latest/forms.html#forms
+    is outdated for long time
+    '''
+    return render(
+        request,
+        'genre_move.html',
+        context={
+            'form': form,
+            'category': category,
+            'category_tree': Genre.objects.all(),
+        }
+    )
 
 
 class GenreListView(ListView):
@@ -55,6 +86,36 @@ class GenreDetailView(DetailView):
         """
         context = super().get_context_data(**kwargs)
         return context
+
+
+class GenreMoveView(UpdateView):
+    """
+    Experimenting the `UpdateView`, but failed with getting the `form`
+    """
+    model = Genre
+    form_class = GenreMoveNodeForm
+    template_name = 'genre_move.html'
+
+    def get_object(self, *args, **kwargs):
+        return get_object_or_404(Genre, pk=self.kwargs.get('pk'))
+
+    def get_form(self, form_class=None):
+        if self.request.method == 'POST':
+            form = MoveNodeForm(Genre, self.request.POST)
+            if form.is_valid():
+                try:
+                    category = form.save()
+                    return HttpResponseRedirect(category.get_absolute_url())
+                except InvalidMove:
+                    pass
+        else:
+            '''
+            from pprint import pprint
+            import pdb; pdb.set_trace()
+            TypeError: int() argument must be a string, a bytes-like object or a number, not 'DeferredAttribute'
+            '''
+            form = MoveNodeForm(Genre)
+        return form
 
 
 class GenreDeleteView(DeleteView):
