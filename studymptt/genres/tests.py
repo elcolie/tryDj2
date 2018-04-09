@@ -28,10 +28,3 @@ def fill_database():
 
     mod_kitchen = Genre.objects.create(name='Moduler Kitchen')
 
-
-class GenreTestCase(TestCase):
-    def setUp(self):
-        fill_database()
-
-    def test_almirah(self):
-        import pdb; pdb.set_trace()

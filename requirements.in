@@ -1,5 +1,7 @@
 django
 django-mptt
+djangorestframework
 -e git+git@github.com:django-mptt/django-mptt.git@origin/master#egg=django-mptt
 django-extensions
 ipython
+ipdb

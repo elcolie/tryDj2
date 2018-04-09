@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('openingstocks', OpeningStockCreateView.as_view()),
     path('genres/', include('genres.urls', namespace='genre')),
+    path('api/', include('studymptt.api_urls', namespace='api')),
 ]
