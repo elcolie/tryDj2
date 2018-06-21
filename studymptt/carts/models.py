@@ -1,7 +1,7 @@
 from django.contrib.auth import get_user_model
 from django.db import models
 
-from studymptt.items.models import Item
+from items.models import Item
 
 User = get_user_model()
 

@@ -1,3 +1,8 @@
 from django.test import TestCase
 
-# Create your tests here.
+class TestCart(TestCase):
+    def setUp(self):
+        pass
+
+    def test_carts(self):
+        mommy.make

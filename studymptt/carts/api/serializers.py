@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from studymptt.carts.models import Cart
+from carts.models import Cart
 
 
 class CartSerializer(serializers.ModelSerializer):
