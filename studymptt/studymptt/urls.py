@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from contacts.views import contact_view
 from openingstocks.views import OpeningStockCreateView
 
 urlpatterns = [
@@ -23,4 +24,5 @@ urlpatterns = [
     path('openingstocks', OpeningStockCreateView.as_view()),
     path('genres/', include('genres.urls', namespace='genre')),
     path('api/', include('studymptt.api_urls', namespace='api')),
+    path('contacts/', contact_view, name='contact'),
 ]
