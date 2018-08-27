@@ -27,9 +27,9 @@ class TimelineSerializer(serializers.ModelSerializer):
         User: PlainUserSerializer(),
     }
     actor = GenericRelatedField(__basic_fields)
-    # Can use `GenericRelatedField` once per serializer
-    # action_object_detail = GenericRelatedField(__basic_fields)
-    # target = GenericRelatedField(__basic_fields)
+    # Can use only 1 `GenericRelatedField` per `serializer`
+    action_object = GenericRelatedField(__basic_fields)
+    target = GenericRelatedField(__basic_fields)
 
     class Meta:
         model = Action
@@ -38,7 +38,7 @@ class TimelineSerializer(serializers.ModelSerializer):
             'actor',
             'verb',
             'description',
-            # 'target',
-            # 'action_object_detail',
+            'target',
+            'action_object',
             'timestamp',
         ]
