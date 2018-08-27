@@ -4,26 +4,30 @@
 #
 #    pip-compile --output-file requirements.txt requirements.in
 #
+-e git+git@github.com:justquick/django-activity-stream.git@master#egg=django-activity-stream
+-e git+git@github.com:elcolie/django-geoposition.git@master#egg=django-geoposition
 -e git+git@github.com:django-mptt/django-mptt.git@origin/master#egg=django-mptt
 appnope==0.1.0            # via ipython
 backcall==0.1.0           # via ipython
 decorator==4.3.0          # via ipython, traitlets
-django-extensions==2.0.7
+django-extensions==2.1.1
 django-js-asset==1.1.0
-django==2.0.6
+django==2.1
 djangorestframework==3.8.2
 ipdb==0.11
 ipython-genutils==0.2.0   # via traitlets
-ipython==6.4.0
-jedi==0.12.0              # via ipython
+ipython==6.5.0
+jedi==0.12.1              # via ipython
 model-mommy==1.6.0
-parso==0.2.1              # via jedi
+parso==0.3.1              # via jedi
 pexpect==4.6.0            # via ipython
 pickleshare==0.7.4        # via ipython
+pillow==5.2.0
 prompt-toolkit==1.0.15    # via ipython
-ptyprocess==0.5.2         # via pexpect
+ptyprocess==0.6.0         # via pexpect
 pygments==2.2.0           # via ipython
-pytz==2018.4              # via django
+pytz==2018.5              # via django
+rest-framework-generic-relations==1.2.0
 simplegeneric==0.8.1      # via ipython
 six==1.11.0               # via django-extensions, model-mommy, prompt-toolkit, traitlets
 traitlets==4.3.2          # via ipython

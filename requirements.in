@@ -6,3 +6,8 @@ django-extensions
 model_mommy
 ipython
 ipdb
+django-activity-stream
+rest-framework-generic-relations
+Pillow
+-e git+git@github.com:justquick/django-activity-stream.git@master#egg=django-activity-stream
+-e git+git@github.com:elcolie/django-geoposition.git@master#egg=django-geoposition

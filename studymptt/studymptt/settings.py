@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_extensions',
     'rest_framework',
+    'actstream',
     'carts',
     'contacts',
     'mptt',
@@ -48,6 +49,9 @@ INSTALLED_APPS = [
     'geoposition',
     'pois',
     'keydatecases',
+    'tweets',
+    'retweets',
+    'timelines',
 ]
 
 MIDDLEWARE = [
