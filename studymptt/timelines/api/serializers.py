@@ -21,15 +21,24 @@ class PlainUserSerializer(serializers.ModelSerializer):
 
 
 class TimelineSerializer(serializers.ModelSerializer):
-    __basic_fields = {
+    actor = GenericRelatedField({
         Tweet: TweetSerializer(),
         ReTweet: ReTweetSerializer(),
         User: PlainUserSerializer(),
-    }
-    actor = GenericRelatedField(__basic_fields)
+    })
     # Can use only 1 `GenericRelatedField` per `serializer`
-    action_object = GenericRelatedField(__basic_fields)
-    target = GenericRelatedField(__basic_fields)
+    # action_object = GenericRelatedField(__basic_fields)
+    # target = GenericRelatedField(__basic_fields)
+    action_object = GenericRelatedField({
+        Tweet: TweetSerializer(),
+        ReTweet: ReTweetSerializer(),
+        User: PlainUserSerializer(),
+    })
+    target = GenericRelatedField({
+        Tweet: TweetSerializer(),
+        ReTweet: ReTweetSerializer(),
+        User: PlainUserSerializer(),
+    })
 
     class Meta:
         model = Action
