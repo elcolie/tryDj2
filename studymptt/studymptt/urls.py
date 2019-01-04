@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from contacts.views import contact_view
+from graphene_django.views import GraphQLView
 from openingstocks.views import OpeningStockCreateView
 
 urlpatterns = [
@@ -25,4 +26,5 @@ urlpatterns = [
     path('genres/', include('genres.urls', namespace='genre')),
     path('api/', include('studymptt.api_urls', namespace='api')),
     path('contacts/', contact_view, name='contact'),
+    path('graphql', GraphQLView.as_view(graphiql=True)),
 ]

@@ -11,3 +11,5 @@ rest-framework-generic-relations
 Pillow
 -e git+git@github.com:justquick/django-activity-stream.git@master#egg=django-activity-stream
 -e git+git@github.com:elcolie/django-geoposition.git@master#egg=django-geoposition
+graphene-django
+django-filter

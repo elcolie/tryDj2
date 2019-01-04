@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+    'django_filters',
+    'graphene_django',
     'rest_framework',
     'actstream',
     'carts',
@@ -53,6 +55,10 @@ INSTALLED_APPS = [
     'retweets',
     'timelines',
 ]
+
+GRAPHENE = {
+    'SCHEMA': 'schemas.schema' # Where your Graphene schema lives
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -143,4 +149,9 @@ GEOPOSITION_MAP_OPTIONS = {
 
 GEOPOSITION_MARKER_OPTIONS = {
     'cursor': 'move'
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 10
 }
