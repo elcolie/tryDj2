@@ -11,33 +11,32 @@ aniso8601==3.0.2          # via graphene
 appnope==0.1.0            # via ipython
 backcall==0.1.0           # via ipython
 decorator==4.3.0          # via ipython, traitlets
-django-extensions==2.1.1
+django-extensions==2.1.4
 django-filter==2.0.0
 django-js-asset==1.1.0
-django==2.1
-djangorestframework==3.8.2
+django==2.1.5
+djangorestframework==3.9.0
 graphene-django==2.2.0
 graphene==2.1.3           # via graphene-django
 graphql-core==2.1         # via graphene, graphene-django, graphql-relay
 graphql-relay==0.4.5      # via graphene
 ipdb==0.11
 ipython-genutils==0.2.0   # via traitlets
-ipython==6.5.0
-jedi==0.12.1              # via ipython
+ipython==7.2.0
+jedi==0.13.2              # via ipython
 model-mommy==1.6.0
 parso==0.3.1              # via jedi
 pexpect==4.6.0            # via ipython
-pickleshare==0.7.4        # via ipython
-pillow==5.2.0
+pickleshare==0.7.5        # via ipython
+pillow==5.4.1
 promise==2.2.1            # via graphene, graphene-django, graphql-core, graphql-relay
-prompt-toolkit==1.0.15    # via ipython
+prompt-toolkit==2.0.7     # via ipython
 ptyprocess==0.6.0         # via pexpect
-pygments==2.2.0           # via ipython
-pytz==2018.5              # via django
-rest-framework-generic-relations==1.2.0
+pygments==2.3.1           # via ipython
+pytz==2018.9              # via django
+rest-framework-generic-relations==1.2.1
 rx==1.6.1                 # via graphql-core
-simplegeneric==0.8.1      # via ipython
 singledispatch==3.4.0.3   # via graphene-django
-six==1.11.0               # via django-extensions, graphene, graphene-django, graphql-core, graphql-relay, model-mommy, promise, prompt-toolkit, singledispatch, traitlets
+six==1.12.0               # via django-extensions, graphene, graphene-django, graphql-core, graphql-relay, model-mommy, promise, prompt-toolkit, singledispatch, traitlets
 traitlets==4.3.2          # via ipython
 wcwidth==0.1.7            # via prompt-toolkit
