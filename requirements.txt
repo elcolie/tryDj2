@@ -6,14 +6,14 @@
 #
 -e git+git@github.com:justquick/django-activity-stream.git@master#egg=django-activity-stream
 -e git+git@github.com:elcolie/django-geoposition.git@master#egg=django-geoposition
--e git+git@github.com:django-mptt/django-mptt.git@origin/master#egg=django-mptt
 aniso8601==3.0.2          # via graphene
 appnope==0.1.0            # via ipython
 backcall==0.1.0           # via ipython
 decorator==4.4.0          # via ipython, traitlets
 django-extensions==2.1.6
 django-filter==2.1.0
-django-js-asset==1.2.2
+django-js-asset==1.2.2    # via django-mptt
+django-mptt==0.9.1
 django==2.1.7
 djangorestframework==3.9.2
 graphene-django==2.2.0
